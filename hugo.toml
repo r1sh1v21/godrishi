@@ -1,0 +1,10 @@
+baseURL = '/'
+locale = 'en-us'
+title = 'God Rishi'
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  author = 'God Rishi'
+  description = 'A 90s/early 2000s gothic minimalist blog.'

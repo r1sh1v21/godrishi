@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default "en-us" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <div class="site-wrapper">
+        <aside class="sidebar-left" aria-hidden="true"></aside>
+        <main class="main-container">
+            {{ partial "header.html" . }}
+            <section class="site-content">
+                {{ block "main" . }}{{ end }}
+            </section>
+            {{ partial "footer.html" . }}
+        </main>
+        <aside class="sidebar-right" aria-hidden="true"></aside>
+    </div>
+</body>
+</html>
