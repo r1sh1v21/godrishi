@@ -1,3 +1,9 @@
 <footer class="site-footer">
-    {{ .Site.Title }} {{ now.Format "2006" }}
+    <div class="footer-divider" aria-hidden="true">
+        <img src="{{ "images/sigils/divider-bar-4.png" | relURL }}" alt="---" class="footer-divider-img">
+    </div>
+    <div class="footer-seal" aria-hidden="true">
+        <img src="{{ "images/sigils/crescent-moon.png" | relURL }}" alt="☾" class="footer-moon-img">
+    </div>
+    <p class="footer-text">{{ .Site.Title }} &middot; {{ now.Format "2006" }}</p>
 </footer>

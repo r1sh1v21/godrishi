@@ -1,363 +1,450 @@
 /* ==========================================================================
-   God Rishi - 90s/2000s Gothic Minimalist Stylesheet
-   No CSS Frameworks. Raw CSS Only.
+   GOD RISHI — Gothic Cyber-Sigilism Stylesheet
+   Raw CSS only. Left-aligned. High contrast.
    ========================================================================== */
 
-/* CSS Reset & Core Baseline */
-* {
+/* ------------------------------------------------------------------
+   RESET
+   ------------------------------------------------------------------ */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    transition: none !important;
-    animation: none !important;
 }
 
+/* ------------------------------------------------------------------
+   BASE
+   ------------------------------------------------------------------ */
 html, body {
-    background-color: #000000;
-    color: #e0e0e0;
+    background-color: #000;
+    color: #d8d4cc;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     min-height: 100vh;
+    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
 }
 
-/* Three Column Layout Container */
-.site-wrapper {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+::selection {
+    background: #222;
+    color: #fff;
 }
 
-/* Sidebars */
-.sidebar-left {
-    width: 80px;
-    min-width: 80px;
-    border-right: 1px solid #1a1a1a;
-    background-color: #000000;
+img { border: none; display: block; }
+
+a               { color: #d8d4cc; text-decoration: underline; }
+a:hover         { color: #fff; }
+
+/* ------------------------------------------------------------------
+   PAGE CONTAINER — left-aligned
+   ------------------------------------------------------------------ */
+.site-container {
+    max-width: 760px;
+    padding: 55px 30px 100px 80px;
+    margin: 0;
+    position: relative;
+    z-index: 10;
 }
 
-.sidebar-right {
-    width: 80px;
-    min-width: 80px;
-    border-left: 1px solid #1a1a1a;
-    background-color: #000000;
-}
-
-/* Main Content Column */
-.main-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 30px;
-    min-width: 0;
-}
-
-/* Site Header */
+/* ------------------------------------------------------------------
+   SITE HEADER
+   ------------------------------------------------------------------ */
 .site-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 52px;
 }
 
+/* Compass-rose / hero sigil above the title */
+.header-emblem {
+    margin-bottom: 14px;
+}
+.emblem-sigil {
+    width: 130px;
+    height: auto;
+    opacity: 0.88;
+}
+
+/* Site title */
 .site-title {
     font-family: "UnifrakturMaguntia", cursive;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: normal;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    line-height: 1.1;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 16px;
 }
-
 .site-title a {
-    color: #e0e0e0;
+    color: #e8e4dc;
     text-decoration: none;
 }
-
-.site-title a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
+.site-title a:hover { color: #fff; }
 
 /* Navigation */
 .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     font-size: 1rem;
     letter-spacing: 1px;
-    color: #888888;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
-
-.site-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    padding: 0 4px;
-}
-
-.site-nav a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.site-nav .nav-separator {
-    color: #555555;
+.nav-bracket {
+    color: #555;
     user-select: none;
 }
-
-/* Content Area */
-.site-content {
-    flex: 1;
+.site-nav a {
+    color: #c0bcb4;
+    text-decoration: none;
+    padding: 0 2px;
 }
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "UnifrakturMaguntia", cursive;
-    font-weight: normal;
-    color: #e0e0e0;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-h1 { font-size: 2.4rem; }
-h2 { font-size: 1.9rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.2rem; }
-
-/* Links */
-a {
-    color: #e0e0e0;
+.site-nav a:hover {
+    color: #fff;
     text-decoration: underline;
 }
-
-a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+.nav-star {
+    width: 12px;
+    height: auto;
+    margin: 0 10px;
+    opacity: 0.85;
+    display: block;
+    vertical-align: middle;
 }
 
-/* Posts List (Homepage & Archives) */
-.post-list {
+/* Header divider — crescent ornament below nav */
+.header-divider {
+    margin-top: 18px;
+}
+.divider-crescent-img {
+    width: 200px;
+    height: auto;
+    opacity: 0.82;
+}
+
+/* ------------------------------------------------------------------
+   HOMEPAGE — post list
+   ------------------------------------------------------------------ */
+.posts-stream { }
+
+.posts-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.post-item {
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #141414;
+/* Ornamental divider between entries */
+.post-item-divider {
+    list-style: none;
+    margin: 32px 0;
+}
+.post-divider-bar {
+    width: 150px;
+    height: auto;
+    opacity: 0.72;
 }
 
-.post-item:last-child {
-    border-bottom: none;
-    margin-bottom: 20px;
-}
-
-.post-meta {
-    font-size: 0.88rem;
-    color: #888888;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-}
-
-.post-meta .post-date {
-    color: #999999;
-}
-
-.post-meta .post-category {
-    color: #777777;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-}
-
-.post-meta .meta-separator {
-    margin: 0 8px;
-    color: #444444;
-}
-
-.post-title {
-    font-size: 1.85rem;
-    margin-top: 2px;
+/* Single entry */
+.post-entry {
     margin-bottom: 8px;
 }
 
-.post-title a {
-    color: #e0e0e0;
-    text-decoration: none;
+.post-entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.meta-star {
+    width: 13px;
+    height: auto;
+    opacity: 0.88;
+    flex-shrink: 0;
+}
+.meta-date {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+.meta-sep {
+    color: #444;
+    font-size: 0.85rem;
+}
+.meta-category {
+    font-size: 0.72rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.post-title a:hover {
-    color: #ffffff;
+.post-entry-title {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 2.05rem;
+    font-weight: normal;
+    line-height: 1.15;
+    margin-bottom: 7px;
+}
+.post-entry-title a {
+    color: #e0dcd4;
+    text-decoration: none;
+}
+.post-entry-title a:hover {
+    color: #fff;
     text-decoration: underline;
 }
 
-.post-excerpt {
+.post-entry-excerpt {
     font-style: italic;
-    color: #b0b0b0;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 4px;
+    color: #999;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: 560px;
 }
 
-/* Single Post Page */
+/* ------------------------------------------------------------------
+   SINGLE POST
+   ------------------------------------------------------------------ */
+.post-article { }
+
 .post-header {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 36px;
 }
 
-.post-header .post-title {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
+/* Small star accent above the post title */
+.post-header-star {
+    margin-bottom: 10px;
+}
+.header-star-sigil {
+    width: 20px;
+    height: auto;
+    opacity: 0.88;
 }
 
-.post-header .post-meta {
-    font-size: 0.9rem;
+.post-title {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 2.65rem;
+    font-weight: normal;
+    line-height: 1.1;
+    color: #e8e4dc;
+    margin-bottom: 10px;
 }
 
-.post-content {
+.post-meta {
+    font-size: 0.86rem;
+    color: #777;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.meta-readtime { color: #666; }
+
+/* Ornamental rule under post meta */
+.post-header-rule {
+    margin-top: 18px;
+}
+.post-rule-img {
+    width: 150px;
+    height: auto;
+    opacity: 0.72;
+}
+
+/* Post body prose */
+.post-body {
     font-size: 1.05rem;
-    line-height: 1.75;
+    line-height: 1.8;
+    max-width: 620px;
 }
-
-.post-content p {
-    margin-bottom: 1.5em;
+.post-body p          { margin-bottom: 1.55em; }
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: normal;
+    color: #e0dcd4;
+    margin: 38px 0 14px;
+    line-height: 1.25;
 }
-
-.post-content blockquote {
-    border-left: 2px solid #333333;
-    padding-left: 18px;
-    margin: 25px 0;
-    color: #aaaaaa;
+.post-body h2 { font-size: 1.9rem; }
+.post-body h3 { font-size: 1.5rem; }
+.post-body h4 { font-size: 1.2rem; }
+.post-body blockquote {
+    border-left: 2px solid #2a2a2a;
+    padding-left: 20px;
+    margin: 28px 0;
+    color: #aaa;
     font-style: italic;
 }
-
-.post-content ul, .post-content ol {
-    margin: 20px 0 20px 30px;
-}
-
-.post-content li {
-    margin-bottom: 8px;
-}
-
-.post-content hr {
+.post-body ul,
+.post-body ol     { margin: 22px 0 22px 28px; }
+.post-body li     { margin-bottom: 8px; }
+.post-body hr {
     border: none;
     border-top: 1px solid #1a1a1a;
-    margin: 35px 0;
+    margin: 40px 0;
 }
-
-.post-content code {
+.post-body code {
     font-family: "Courier New", Courier, monospace;
-    font-size: 0.9em;
-    background-color: #0d0d0d;
-    padding: 2px 5px;
-    border: 1px solid #222222;
-    color: #d0d0d0;
+    font-size: 0.88em;
+    background: #0d0d0d;
+    padding: 2px 6px;
+    border: 1px solid #1e1e1e;
+    color: #ccc;
 }
-
-.post-content pre {
-    background-color: #0d0d0d;
-    border: 1px solid #222222;
-    padding: 15px;
+.post-body pre {
+    background: #080808;
+    border: 1px solid #1e1e1e;
+    padding: 18px;
     overflow-x: auto;
-    margin: 25px 0;
+    margin: 28px 0;
 }
-
-.post-content pre code {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.post-content img {
+.post-body pre code { background: none; border: none; padding: 0; }
+.post-body img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 25px auto;
-    border: 1px solid #222222;
+    margin: 28px 0;
+    border: 1px solid #1a1a1a;
+}
+.post-body strong { color: #ddd; }
+.post-body a      { color: #bbb; }
+.post-body a:hover{ color: #fff; }
+
+/* End-of-article sigil seal */
+.post-seal {
+    margin: 60px 0 20px;
+}
+.seal-img {
+    width: 70px;
+    height: auto;
+    opacity: 0.78;
 }
 
-/* About & Standard Pages */
+/* ------------------------------------------------------------------
+   ABOUT / STANDARD PAGES
+   ------------------------------------------------------------------ */
+.page-article { }
+
+.page-header {
+    margin-bottom: 36px;
+}
+
 .page-title {
-    font-size: 2.3rem;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #1a1a1a;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 2.65rem;
+    font-weight: normal;
+    line-height: 1.1;
+    color: #e8e4dc;
+    margin-bottom: 18px;
 }
 
-.page-content {
+.page-header-rule {
+    margin-top: 0;
+}
+
+/* Page body shares post-body styling */
+.page-body {
     font-size: 1.05rem;
-    line-height: 1.75;
+    line-height: 1.8;
+    max-width: 620px;
+}
+.page-body p { margin-bottom: 1.55em; }
+.page-body a { color: #bbb; }
+.page-body a:hover { color: #fff; }
+
+.page-seal {
+    margin: 60px 0 20px;
 }
 
-.page-content p {
-    margin-bottom: 1.5em;
+/* ------------------------------------------------------------------
+   ARCHIVE
+   ------------------------------------------------------------------ */
+.archive-section { }
+
+.archive-year-title {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: 1.85rem;
+    font-weight: normal;
+    color: #e0dcd4;
+    margin: 40px 0 16px;
+}
+.year-bracket {
+    color: #444;
+    margin: 0 4px;
 }
 
-/* Archive Page Grouping */
-.archive-year {
-    font-size: 1.8rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #1a1a1a;
-    padding-bottom: 5px;
-}
-
-.archive-list {
+.archive-items {
     list-style: none;
-    margin-bottom: 25px;
+    padding: 0;
+    margin-bottom: 24px;
 }
-
-.archive-item {
+.archive-entry-row {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 14px;
     margin-bottom: 12px;
-    align-items: baseline;
 }
-
+.archive-star {
+    width: 10px;
+    height: auto;
+    opacity: 0.82;
+    flex-shrink: 0;
+}
 .archive-date {
-    color: #888888;
-    font-size: 0.88rem;
-    min-width: 100px;
-}
-
-.archive-link {
-    flex: 1;
-    font-size: 1.05rem;
-}
-
-/* Site Footer */
-.site-footer {
-    margin-top: 60px;
-    padding-top: 25px;
-    border-top: 1px solid #1a1a1a;
-    text-align: center;
-    color: #666666;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
+    color: #666;
+    min-width: 70px;
     letter-spacing: 0.5px;
 }
+.archive-link {
+    font-size: 1rem;
+    color: #c8c4bc;
+    text-decoration: none;
+}
+.archive-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
 
-/* Simple Responsive Adjustments for Mobile */
-@media (max-width: 650px) {
-    .sidebar-left, .sidebar-right {
-        display: none;
-    }
-    .main-container {
-        padding: 25px 18px;
-    }
-    .site-title {
-        font-size: 2.8rem;
-    }
-    .post-header .post-title {
-        font-size: 2rem;
-    }
-    .archive-item {
-        flex-direction: column;
-        gap: 2px;
-    }
+/* ------------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------------ */
+.site-footer {
+    margin-top: 80px;
+}
+.footer-divider {
+    margin-bottom: 18px;
+}
+.footer-divider-img {
+    width: 150px;
+    height: auto;
+    opacity: 0.68;
+}
+.footer-seal {
+    margin-bottom: 14px;
+}
+.footer-moon-img {
+    width: 36px;
+    height: auto;
+    opacity: 0.72;
+}
+.footer-text {
+    font-size: 0.82rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------------ */
+
+@media (max-width: 680px) {
+    .site-container { padding: 40px 20px 70px 28px; }
+    .site-title { font-size: 2.8rem; }
+    .emblem-sigil { width: 90px; }
+    .post-title,
+    .page-title { font-size: 2rem; }
+    .post-entry-title { font-size: 1.6rem; }
+    .post-body,
+    .page-body { font-size: 0.98rem; }
 }

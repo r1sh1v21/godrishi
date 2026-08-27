@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    <title>{{ if not .IsHome }}{{ .Title }} :: {{ end }}{{ .Site.Title }}</title>
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,15 @@
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
-    <div class="site-wrapper">
-        <aside class="sidebar-left" aria-hidden="true"></aside>
-        <main class="main-container">
-            {{ partial "header.html" . }}
-            <section class="site-content">
-                {{ block "main" . }}{{ end }}
-            </section>
-            {{ partial "footer.html" . }}
+
+
+    <!-- Main left-aligned layout container -->
+    <div class="site-container">
+        {{ partial "header.html" . }}
+        <main class="site-content">
+            {{ block "main" . }}{{ end }}
         </main>
-        <aside class="sidebar-right" aria-hidden="true"></aside>
+        {{ partial "footer.html" . }}
     </div>
 </body>
 </html>

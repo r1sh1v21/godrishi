@@ -16,7 +16,7 @@ When symbols multiply beyond comprehension, the sacred dissolves into background
 
 Solitude was once the sanctuary of thought. Within the quiet perimeter of one's own mind, ideas were allowed to gestate over seasons, untroubled by the frantic pulse of global consensus. 
 
-Today, silence itself is treated as an error code—a disruption in the transmission stream that must be immediately filled with synthetic stimulation.
+Today, silence itself is treated as an error code — a disruption in the transmission stream that must be immediately filled with synthetic stimulation.
 
 ### Reclaiming the Monolith
 

@@ -1,30 +1,24 @@
 {{ define "main" }}
-<div class="posts-container">
-    <h1 class="page-title">{{ .Title }}</h1>
+<div class="manuscript">
+    <header class="manuscript-head">
+        <h1 class="manuscript-title">{{ .Title }}</h1>
+        <div class="manuscript-rule" aria-hidden="true">
+            <img src="{{ "images/sigils/hr-bar-1.png" | relURL }}" alt="" class="divider-img divider-md">
+        </div>
+    </header>
     {{ if gt (len .Pages) 0 }}
-    <ul class="post-list">
+    <ul class="entries">
         {{ range .Pages }}
-        <li class="post-item">
-            <div class="post-meta">
-                <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan 2006" }}</time>
-                {{ with .Params.category }}
-                <span class="meta-separator">•</span>
-                <span class="post-category">{{ . }}</span>
-                {{ end }}
+        <li class="entry">
+            <div class="entry-head">
+                <time class="entry-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+                {{ with .Params.category }}<span class="entry-cat">{{ . }}</span>{{ end }}
             </div>
-            <h2 class="post-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-            {{ with .Params.excerpt }}
-            <p class="post-excerpt">{{ . }}</p>
-            {{ else }}
-            <p class="post-excerpt">{{ .Summary | plainify | truncate 140 }}</p>
-            {{ end }}
+            <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ with .Params.excerpt }}<p class="entry-excerpt">{{ . }}</p>{{ end }}
         </li>
         {{ end }}
     </ul>
-    {{ else }}
-    <p>No entries found.</p>
     {{ end }}
 </div>
 {{ end }}

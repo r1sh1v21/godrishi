@@ -1,18 +1,24 @@
 {{ define "main" }}
-<div class="archive-container">
+<div class="archive-section">
     <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-header-rule" aria-hidden="true">
+        <img src="{{ "images/sigils/divider-bar-4.png" | relURL }}" alt="---" class="post-rule-img">
+    </div>
     {{ with .Content }}
-    <div class="page-content">{{ . }}</div>
+    <div class="page-body">{{ . }}</div>
     {{ end }}
 
     {{ $posts := where .Site.RegularPages "Type" "in" (slice "posts" "post") }}
     {{ range $posts.GroupByDate "2006" }}
-    <h2 class="archive-year">{{ .Key }}</h2>
-    <ul class="archive-list">
+    <h2 class="archive-year-title">
+        <span class="year-bracket">/</span>{{ .Key }}<span class="year-bracket">/</span>
+    </h2>
+    <ul class="archive-items">
         {{ range .Pages }}
-        <li class="archive-item">
-            <time class="archive-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "02 Jan" }}</time>
-            <span class="archive-link"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+        <li class="archive-entry-row">
+            <img src="{{ "images/sigils/star-bullet.png" | relURL }}" alt="✦" class="archive-star">
+            <time class="archive-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan" }}</time>
+            <a href="{{ .RelPermalink }}" class="archive-link">{{ .Title }}</a>
         </li>
         {{ end }}
     </ul>

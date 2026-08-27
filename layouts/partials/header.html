@@ -1,12 +1,18 @@
 <header class="site-header">
-    <div class="site-title">
-        <a href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+    <div class="header-emblem">
+        <img src="{{ "images/sigils/compass-rose.png" | relURL }}" alt="" class="emblem-sigil">
     </div>
+    <h1 class="site-title">
+        <a href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+    </h1>
     <nav class="site-nav">
-        <a href="{{ "" | relURL }}">home</a>
-        <span class="nav-separator">|</span>
-        <a href="{{ "archive/" | relURL }}">archive</a>
-        <span class="nav-separator">|</span>
-        <a href="{{ "about/" | relURL }}">about</a>
+        <span class="nav-bracket">[</span><a href="{{ "" | relURL }}">home</a><span class="nav-bracket">]</span>
+        <img src="{{ "images/sigils/star-bullet.png" | relURL }}" alt="✦" class="nav-star">
+        <span class="nav-bracket">[</span><a href="{{ "archive/" | relURL }}">archive</a><span class="nav-bracket">]</span>
+        <img src="{{ "images/sigils/star-bullet.png" | relURL }}" alt="✦" class="nav-star">
+        <span class="nav-bracket">[</span><a href="{{ "about/" | relURL }}">about</a><span class="nav-bracket">]</span>
     </nav>
+    <div class="header-divider" aria-hidden="true">
+        <img src="{{ "images/sigils/divider-crescent.png" | relURL }}" alt="---" class="divider-crescent-img">
+    </div>
 </header>
